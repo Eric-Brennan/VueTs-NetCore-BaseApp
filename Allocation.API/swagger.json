@@ -1,0 +1,125 @@
+{
+  "x-generator": "NSwag v13.12.1.0 (NJsonSchema v10.4.6.0 (Newtonsoft.Json v9.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "AllocationAPI",
+    "version": "1.0.0"
+  },
+  "consumes": [
+    "application/json",
+    "text/json",
+    "application/*+json"
+  ],
+  "produces": [
+    "text/plain",
+    "application/json",
+    "text/json"
+  ],
+  "paths": {
+    "/api/Profile/authenticate-login": {
+      "post": {
+        "tags": [
+          "Profile"
+        ],
+        "operationId": "Profile_AuthenticateLogin",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProfileAccount"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ApiResponseOfProfileAccount"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ApiResponseOfProfileAccount": {
+      "type": "object",
+      "required": [
+        "httpStatusCode",
+        "itemCount"
+      ],
+      "properties": {
+        "httpStatusCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "itemCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "result": {
+          "$ref": "#/definitions/ProfileAccount"
+        }
+      }
+    },
+    "ProfileAccount": {
+      "type": "object",
+      "required": [
+        "success",
+        "colleagueID",
+        "accountTypeID",
+        "companyID",
+        "airportID"
+      ],
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "colleagueID": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "accountTypeID": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "accountType": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "passwordSetDate": {
+          "type": "string"
+        },
+        "companyID": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "airportID": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "baseAirport": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
