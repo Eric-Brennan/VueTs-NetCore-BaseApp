@@ -1,4 +1,4 @@
-# VueTs-NetCore_BaseApp
+# VueTs-NetCore-BaseApp
 
 A template project which includes a Vue and Typescript UI app, and a .NetCore api.
 
